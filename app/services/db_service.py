@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
-from app import PostgresDatabase
+from app.database.postgresql_db import PostgresDatabase
 
 
 class DatabaseService(
