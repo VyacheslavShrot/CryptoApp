@@ -2,6 +2,8 @@ from typing import Any
 
 from flask import request, jsonify, Flask
 
+from app.services.logger import Logger
+
 
 class APIMeta(type):
     """
@@ -74,7 +76,10 @@ class APIMeta(type):
         return super().__new__(cls, name, bases, dct)
 
 
-class APIRoute(metaclass=APIMeta):
+class APIRoute(
+    Logger,
+    metaclass=APIMeta
+):
     endpoint = None
 
     def __init__(self, app: Flask):
