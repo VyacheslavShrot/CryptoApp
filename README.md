@@ -11,6 +11,8 @@ SECRET_KEY=str
 
 POSTGRES_USER=admin
 POSTGRES_PASSWORD=admin
+
+JWT_SECRET_KEY=admin
 ```
 
 - Run Database and Create Database Name

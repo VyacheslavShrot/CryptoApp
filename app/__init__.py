@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -18,6 +19,11 @@ def create_app(
     app: Flask = Flask(__name__)
 
     app.config.from_object('config.Config')
+
+    """
+    Init JWT Functionality
+    """
+    JWTManager(app)
 
     """
     Init Database and Migrations
